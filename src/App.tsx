@@ -1,23 +1,36 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { Services } from './components/Services';
 import { HowItWorks } from './components/HowItWorks';
-import { Pricing } from './components/Pricing';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { Upload } from './components/Upload';
 
-function App() {
+function HomePage() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
+    <>
       <Hero />
       <Services />
       <HowItWorks />
-      <Pricing />
       <Contact />
-      <Footer />
-    </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/upload" element={<Upload />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

@@ -1,4 +1,4 @@
-
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
@@ -30,6 +30,9 @@ export default {
           '33%': { transform: 'translate(30px, 30px) scale(1.1)' },
           '66%': { transform: 'translate(-30px, -30px) scale(0.9)' },
         },
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
     },
   },

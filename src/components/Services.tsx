@@ -1,36 +1,69 @@
 import React from 'react';
-import { FileText, Headphones, Video, Globe } from 'lucide-react';
+import { Scale, FileText, Stethoscope, Globe } from 'lucide-react';
+import { ServiceCard } from './services/ServiceCard';
+import { LegalServices } from './services/LegalServices';
+import { GeneralServices } from './services/GeneralServices';
+import { MedicalServices } from './services/MedicalServices';
+import { GlobalServices } from './services/GlobalServices';
 
 export function Services() {
+  const [activeService, setActiveService] = React.useState<string | null>(null);
+
+  const services = [
+    {
+      id: 'legal',
+      title: 'Legal Transcription',
+      icon: Scale,
+      description: 'Professional transcription services for all legal proceedings and documentation',
+      component: LegalServices
+    },
+    {
+      id: 'general',
+      title: 'General Transcription',
+      icon: FileText,
+      description: 'Comprehensive transcription solutions for business and academic needs',
+      component: GeneralServices
+    },
+    {
+      id: 'medical',
+      title: 'Medical Transcription',
+      icon: Stethoscope,
+      description: 'Specialized medical transcription covering all healthcare specialties',
+      component: MedicalServices
+    },
+    {
+      id: 'global',
+      title: 'Global Translations',
+      icon: Globe,
+      description: 'Multi-language translation services for European, Asian, and Indian languages',
+      component: GlobalServices
+    }
+  ];
+
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-          <p className="text-xl text-gray-600">Comprehensive transcription solutions for every need</p>
+          <h2 className="text-4xl font-bold text-white mb-4">Our Services</h2>
+          <p className="text-xl text-gray-300">Comprehensive transcription solutions for every industry</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="text-center p-6">
-            <FileText className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">General Transcription</h3>
-            <p className="text-gray-600">Accurate transcription for interviews, meetings, and lectures</p>
-          </div>
-          <div className="text-center p-6">
-            <Headphones className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Audio Transcription</h3>
-            <p className="text-gray-600">Convert podcasts and audio recordings to text</p>
-          </div>
-          <div className="text-center p-6">
-            <Video className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Video Transcription</h3>
-            <p className="text-gray-600">Subtitles and captions for video content</p>
-          </div>
-          <div className="text-center p-6">
-            <Globe className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Multi-language</h3>
-            <p className="text-gray-600">Transcription services in multiple languages</p>
-          </div>
+          {services.map((service) => (
+            <ServiceCard
+              key={service.id}
+              title={service.title}
+              Icon={service.icon}
+              description={service.description}
+              isActive={activeService === service.id}
+              onClick={() => setActiveService(activeService === service.id ? null : service.id)}
+            />
+          ))}
         </div>
+        {activeService && (
+          <div className="mt-12 animate-fade-in">
+            {services.find(s => s.id === activeService)?.component()}
+          </div>
+        )}
       </div>
     </section>
   );
