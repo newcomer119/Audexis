@@ -1,9 +1,30 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Headphones, Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  // Close menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
+
+  // Close menu on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isMenuOpen) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isMenuOpen]);
 
   return (
     <nav className="bg-gray-900/80 backdrop-blur-md border-b border-white/10 fixed w-full z-10">
@@ -18,6 +39,7 @@ export function Navbar() {
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-indigo-200 hover:text-indigo-400 transition-colors"
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -28,6 +50,7 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
+            <Link to="/about" className="text-indigo-200 hover:text-white transition-colors">About</Link>
             <a href="#services" className="text-indigo-200 hover:text-white transition-colors">Services</a>
             <a href="#how-it-works" className="text-indigo-200 hover:text-white transition-colors">How It Works</a>
             <a href="#contact" className="text-indigo-200 hover:text-white transition-colors">Contact</a>
@@ -37,8 +60,20 @@ export function Navbar() {
           </div>
         </div>
 
-        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}>
+        <div 
+          className={`md:hidden transition-all duration-300 ease-in-out ${
+            isMenuOpen 
+              ? 'max-h-64 opacity-100' 
+              : 'max-h-0 opacity-0 pointer-events-none'
+          }`}
+        >
           <div className="px-2 pt-2 pb-3 space-y-1">
+            <Link
+              to="/about"
+              className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-white/5"
+            >
+              About
+            </Link>
             <a
               href="#services"
               className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-white/5"
@@ -57,7 +92,7 @@ export function Navbar() {
             >
               Contact
             </a>
-            <Link to="/upload" className="w-full mt-2 btn-primary">
+            <Link to="/upload" className="block px-3 py-2 btn-primary text-center">
               Get Started
             </Link>
           </div>

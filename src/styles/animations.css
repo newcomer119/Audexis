@@ -1,38 +1,32 @@
-@keyframes blob1 {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -50px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-  100% { transform: translate(0, 0) scale(1); }
+/* Existing animations... */
+
+/* Audio Wave Animation */
+.audio-wave-container {
+  z-index: 0;
 }
 
-@keyframes blob2 {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-50px, 30px) scale(1.1); }
-  66% { transform: translate(20px, -20px) scale(0.9); }
-  100% { transform: translate(0, 0) scale(1); }
+.wave-group {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-50%);
 }
 
-@keyframes blob3 {
-  0% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, 30px) scale(1.1); }
-  66% { transform: translate(-30px, -30px) scale(0.9); }
-  100% { transform: translate(0, 0) scale(1); }
+.wave {
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background: linear-gradient(45deg, #4f46e5, #818cf8);
+  animation: wave 1s ease-in-out infinite;
+  transform-origin: 50% 50%;
 }
 
-.animate-blob1 {
-  animation: blob1 20s infinite;
-}
-
-.animate-blob2 {
-  animation: blob2 25s infinite;
-}
-
-.animate-blob3 {
-  animation: blob3 30s infinite;
-}
-
-.bg-grid-pattern {
-  background-image: linear-gradient(to right, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
-  background-size: 50px 50px;
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(0.2);
+  }
+  50% {
+    transform: scaleY(0.8);
+  }
 }

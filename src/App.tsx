@@ -7,6 +7,7 @@ import { HowItWorks } from './components/HowItWorks';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Upload } from './components/Upload';
+import { About } from './components/about/About';
 
 function HomePage() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/upload" element={<Upload />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
       </div>
