@@ -19,7 +19,7 @@ export function Contact() {
                 <input
                   type="text"
                   id="name"
-                  className="mt-1 block w-full rounded-md bg-gray-800/50 border-gray-700 text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full rounded-md bg-gray-400/50 border-gray-300 text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                 />
               </div>
               <div>
