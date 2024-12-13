@@ -51,7 +51,7 @@ export function Navbar() {
 
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/about" className="text-indigo-200 hover:text-white transition-colors">About</Link>
-            <a href="#services" className="text-indigo-200 hover:text-white transition-colors">Services</a>
+            <Link to="/services" className="text-indigo-200 hover:text-white transition-colors">Services</Link>
             <a href="#how-it-works" className="text-indigo-200 hover:text-white transition-colors">How It Works</a>
             <a href="#contact" className="text-indigo-200 hover:text-white transition-colors">Contact</a>
             <Link to="/upload" className="btn-primary py-2 px-4">
@@ -74,12 +74,12 @@ export function Navbar() {
             >
               About
             </Link>
-            <a
-              href="#services"
+            <Link
+              to="/services"
               className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-white/5"
             >
               Services
-            </a>
+            </Link>
             <a
               href="#how-it-works"
               className="block px-3 py-2 rounded-md text-base font-medium text-indigo-200 hover:text-white hover:bg-white/5"

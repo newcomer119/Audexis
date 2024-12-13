@@ -8,6 +8,7 @@ import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Upload } from './components/Upload';
 import { About } from './components/about/About';
+import { ServicesPage } from './pages/Services';
 
 function HomePage() {
   return (
@@ -20,7 +21,7 @@ function HomePage() {
   );
 }
 
-function App() {
+export function App() {
   return (
     <Router>
       <div className="min-h-screen">
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/upload" element={<Upload />} />
           <Route path="/about" element={<About />} />
+          <Route path="/services" element={<ServicesPage />} />
         </Routes>
         <Footer />
       </div>
