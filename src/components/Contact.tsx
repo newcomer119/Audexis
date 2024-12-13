@@ -61,7 +61,7 @@ export function Contact() {
                 <Phone className="h-6 w-6 text-indigo-400 mt-1" />
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-white">Phone</h3>
-                  <p className="mt-1 text-gray-300">+1 (555) 123-4567</p>
+                  <p className="mt-1 text-gray-300">+91 9104411978</p>
                 </div>
               </div>
             </div>
