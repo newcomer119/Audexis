@@ -6,33 +6,25 @@ export default {
       animation: {
         'fade-in': 'fadeIn 1s ease-out',
         'fade-in-delay': 'fadeIn 1s ease-out 0.5s',
-        'blob1': 'blob1 20s infinite',
-        'blob2': 'blob2 25s infinite',
-        'blob3': 'blob3 30s infinite',
+        'slide-up': 'slideUp 1s ease-out',
+        'slide-down': 'slideDown 1s ease-out',
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
-        blob1: {
-          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
-          '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-          '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+        slideUp: {
+          '0%': { transform: 'translateY(100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
         },
-        blob2: {
-          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
-          '33%': { transform: 'translate(-50px, 30px) scale(1.1)' },
-          '66%': { transform: 'translate(20px, -20px) scale(0.9)' },
-        },
-        blob3: {
-          '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
-          '33%': { transform: 'translate(30px, 30px) scale(1.1)' },
-          '66%': { transform: 'translate(-30px, -30px) scale(0.9)' },
+        slideDown: {
+          '0%': { transform: 'translateY(-100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
         },
       },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      fontFamily: {
+        sans: ['Inter var', 'system-ui', 'sans-serif'],
       },
     },
   },
