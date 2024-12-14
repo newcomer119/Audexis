@@ -84,7 +84,7 @@ export function Hero() {
                   </p>
                   <div>
                     <Link
-                      to="/upload"
+                      to="/services"
                       className="inline-flex items-center px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-gray-900 transition-colors duration-300"
                     >
                       Get Started
