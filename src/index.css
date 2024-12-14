@@ -1,58 +1,64 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@tailwind base; /* Import base styles from Tailwind CSS */
+@tailwind components; /* Import component styles from Tailwind CSS */
+@tailwind utilities; /* Import utility classes from Tailwind CSS */
 
 :root {
-  --primary-dark: #1a1b26;
-  --secondary-dark: #24283b;
-  --accent-light: #7aa2f7;
-  --text-light: #c0caf5;
+  /* Define CSS variables for color themes */
+  --primary-dark: #1a1b26; /* Dark primary color */
+  --secondary-dark: #24283b; /* Dark secondary color */
+  --accent-light: #7aa2f7; /* Light accent color */
+  --text-light: #c0caf5; /* Light text color */
 }
 
 body {
-  @apply bg-gradient-to-b from-gray-900 to-gray-800;
+  /* Apply a gradient background to the body */
+  @apply bg-gradient-to-b from-gray-900 to-gray-800; 
 }
 
+
 .glass-card {
-  @apply bg-white/5 backdrop-blur-lg border border-white/10 hover:border-indigo-500/50 transition-all duration-300;
+  /* Styles for a glassmorphic card effect */
+  @apply bg-white/5 backdrop-blur-lg border border-white/10 hover:border-indigo-500/50 transition-all duration-300; 
 }
 
 .section-gradient {
-  @apply bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900;
-}
+  /* Gradient background for sections */
+  @apply bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900; 
+} 
 
 /* Custom scrollbar for webkit browsers */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 8px; /* Set the width of the scrollbar */
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-900;
+  @apply bg-gray-900; /* Background color of the scrollbar track */
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-indigo-600/50 rounded-full;
+  @apply bg-indigo-600/50 rounded-full; /* Style for the scrollbar thumb */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-indigo-500;
-}
+  @apply bg-indigo-500; /* Change color on hover */
+} 
 
 /* Form input styles */
 input, textarea {
-  @apply bg-white/5 border-white/10 text-white;
+  @apply bg-white/5 border-white/10 text-white; /* Styles for input fields and text areas */
 }
 
 input:focus, textarea:focus {
-  @apply border-indigo-500/50 ring-indigo-500/50;
-}
+  @apply border-indigo-500/50 ring-indigo-500/50; /* Styles for focused input fields */
+} 
 
 /* Button styles */
 .btn-primary {
-  @apply bg-gradient-to-r from-indigo-600 to-blue-500 hover:from-indigo-500 hover:to-blue-400 text-white px-6 py-3 rounded-md transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-indigo-500/25;
+  /* Primary button styles with gradient and hover effects */
+  @apply bg-gradient-to-r from-indigo-600 to-blue-500 hover:from-indigo-500 hover:to-blue-400 text-white px-6 py-3 rounded-md transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-indigo-500/25; 
 }
 
 .btn-secondary {
-  @apply border-2 border-indigo-400/50 text-indigo-300 px-6 py-3 rounded-md hover:bg-indigo-500/10 transition-all duration-300 hover:scale-105;
+  /* Secondary button styles with border and hover effects */
+  @apply border-2 border-indigo-400/50 text-indigo-300 px-6 py-3 rounded-md hover:bg-indigo-500/10 transition-all duration-300 hover:scale-105; 
 }

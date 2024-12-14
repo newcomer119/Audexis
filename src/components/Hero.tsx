@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import BusinessImage from '../image/Buisness.jpg'
+import LawyerImage from '../image/Lawyer.jpg'
+import MedicalImage from '../image/Doctor2.jpeg'
 
 // Define the type for the slides
 interface Slide {
@@ -12,17 +15,17 @@ interface Slide {
 // Define the slides array
 const slides: Slide[] = [
   {
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2070&h=1000',
+    image: LawyerImage,
     title: 'Legal Transcription Excellence',
     description: 'Precise documentation for legal proceedings and corporate meetings',
   },
   {
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=2070&h=1000',
+    image: MedicalImage,
     title: 'Medical Expertise',
     description: 'Specialized transcription services for healthcare professionals',
   },
   {
-    image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=2070&h=1000',
+    image: BusinessImage,
     title: 'Global Business Solutions',
     description: 'Multi-language transcription services for international enterprises',
   },
