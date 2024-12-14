@@ -15,6 +15,11 @@ interface Slide {
 // Define the slides array
 const slides: Slide[] = [
   {
+    image: 'path/to/introduction-image.jpg', // Add the image path for the introduction
+    title: 'Welcome to Audexis',
+    description: 'Your trusted partner in transcription services.',
+  },
+  {
     image: LawyerImage,
     title: 'Legal Transcription Excellence',
     description: 'Precise documentation for legal proceedings and corporate meetings',
