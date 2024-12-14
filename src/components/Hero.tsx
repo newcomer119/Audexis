@@ -73,9 +73,9 @@ export function Hero() {
             ></div>
 
             {/* Content */}
-            <div className="relative z-20 h-full flex items-center">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                <div className="max-w-3xl">
+            <div className={`relative z-20 h-full flex items-center ${slide.title === 'Welcome to Audexis' ? 'justify-center' : ''}`}>
+              <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full ${slide.title === 'Welcome to Audexis' ? 'text-center' : ''}`}>
+                <div className={`max-w-3xl ${slide.title === 'Welcome to Audexis' ? 'mx-auto' : ''}`}>
                   <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
                     {slide.title}
                   </h1>
