@@ -1,64 +1,36 @@
-@tailwind base; /* Import base styles from Tailwind CSS */
-@tailwind components; /* Import component styles from Tailwind CSS */
-@tailwind utilities; /* Import utility classes from Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  /* Define CSS variables for color themes */
-  --primary-dark: #1a1b26; /* Dark primary color */
-  --secondary-dark: #24283b; /* Dark secondary color */
-  --accent-light: #7aa2f7; /* Light accent color */
-  --text-light: #c0caf5; /* Light text color */
+@layer base {
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200;
+  }
 }
 
-body {
-  /* Apply a gradient background to the body */
-  @apply bg-gradient-to-b from-gray-900 to-gray-800; 
+@layer components {
+  .btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-all duration-200 hover:scale-105 shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-6 py-3 rounded-md hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 hover:scale-105;
+  }
+
+  .glass-card {
+    @apply bg-white/90 dark:bg-gray-800/90 backdrop-blur-lg shadow-lg border border-gray-200 dark:border-gray-700 transition-all duration-200;
+  }
 }
 
-
-.glass-card {
-  /* Styles for a glassmorphic card effect */
-  @apply bg-white/5 backdrop-blur-lg border border-white/10 hover:border-indigo-500/50 transition-all duration-300; 
-}
-
-.section-gradient {
-  /* Gradient background for sections */
-  @apply bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900; 
-} 
-
-/* Custom scrollbar for webkit browsers */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px; /* Set the width of the scrollbar */
+  @apply w-2;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-900; /* Background color of the scrollbar track */
+  @apply bg-gray-100 dark:bg-gray-800;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-indigo-600/50 rounded-full; /* Style for the scrollbar thumb */
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-indigo-500; /* Change color on hover */
-} 
-
-/* Form input styles */
-input, textarea {
-  @apply bg-white/5 border-white/10 text-white; /* Styles for input fields and text areas */
-}
-
-input:focus, textarea:focus {
-  @apply border-indigo-500/50 ring-indigo-500/50; /* Styles for focused input fields */
-} 
-
-/* Button styles */
-.btn-primary {
-  /* Primary button styles with gradient and hover effects */
-  @apply bg-gradient-to-r from-indigo-600 to-blue-500 hover:from-indigo-500 hover:to-blue-400 text-white px-6 py-3 rounded-md transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-indigo-500/25; 
-}
-
-.btn-secondary {
-  /* Secondary button styles with border and hover effects */
-  @apply border-2 border-indigo-400/50 text-indigo-300 px-6 py-3 rounded-md hover:bg-indigo-500/10 transition-all duration-300 hover:scale-105; 
+  @apply bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-gray-400 dark:hover:bg-gray-500;
 }

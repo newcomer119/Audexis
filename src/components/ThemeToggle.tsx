@@ -8,13 +8,13 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-md transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700"
+      className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ? (
-        <Sun className="h-5 w-5 text-gray-300 hover:text-yellow-400" />
+        <Sun className="h-5 w-5 text-gray-200" />
       ) : (
-        <Moon className="h-5 w-5 text-gray-600 hover:text-indigo-600" />
+        <Moon className="h-5 w-5 text-gray-700" />
       )}
     </button>
   );
