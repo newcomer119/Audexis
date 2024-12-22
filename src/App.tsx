@@ -1,15 +1,16 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from './context/ThemeContext';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { Services } from './components/Services';
-import { HowItWorks } from './components/HowItWorks';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
-import { Upload } from './components/Upload';
-import { About } from './components/about/About';
-import { ServicesPage } from './pages/Services';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ThemeProvider } from "./context/ThemeContext";
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { Services } from "./components/Services";
+import { HowItWorks } from "./components/HowItWorks";
+import { Contact } from "./components/Contact";
+import { Footer } from "./components/Footer";
+import { Upload } from "./components/Upload";
+import { About } from "./components/about/About";
+import { ServicesPage } from "./pages/Services";
+import { MessageCircle } from "lucide-react";
 
 function HomePage() {
   return (
@@ -35,6 +36,23 @@ export function App() {
             <Route path="/services" element={<ServicesPage />} />
           </Routes>
           <Footer />
+
+          {/* Get Quote Button */}
+
+          <a
+            href="tel:+1234567890"
+            className="fixed right-0 top-1/2 transform -translate-y-1/2 bg-red-600 hover:bg-red-700 text-white font-semibold py-4 px-2 rounded-l-md shadow-lg flex flex-col items-center justify-center space-y-2 transition-all duration-300"
+          >
+            {/* Chat Icon */}
+            <MessageCircle className="w-6 h-6 mb-2" />
+
+            {/* Vertical Text */}
+            <div className="text-sm text-center leading-none">
+              <span>Get</span>
+              <br />
+              <span>Quote</span>
+            </div>
+          </a>
         </div>
       </Router>
     </ThemeProvider>

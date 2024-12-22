@@ -9,10 +9,10 @@ export function ServicesPage() {
       <BackgroundAnimation />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-indigo-200 to-white mb-6">
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             Our Services
           </h1>
-          <p className="text-lg sm:text-xl text-indigo-100/90 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             Professional transcription solutions tailored to your specific industry needs
           </p>
         </div>
