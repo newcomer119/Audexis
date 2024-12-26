@@ -7,12 +7,12 @@ import MedicalImage from "../image/Doctor2.jpeg";
 import { FAQ } from "./sections/FAQ";
 import { Security } from "./sections/Security";
 import { Blog } from "./sections/Blog";
-
+import HomePage from "../image/TP.png"
 const slides = [
   {
-    image: "path/to/introduction-image.jpg",
-    title: "Welcome to Audexis",
-    description: "Your trusted partner in transcription services.",
+    "image": HomePage,
+    "title": "Welcome to Audexis",
+     "description": "At Audexis, we specialize in providing fast, accurate, and reliable transcription services tailored to meet your needs."
   },
   {
     image: LawyerImage,
