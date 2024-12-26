@@ -20,6 +20,7 @@ const slides = [
     description:
       "Precise documentation for legal proceedings and corporate meetings",
   },
+  // added few comments
   {
     image: MedicalImage,
     title: "Medical Expertise",
