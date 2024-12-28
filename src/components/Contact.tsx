@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { AudioWave } from './animations/AudioWave';
 import emailjs from '@emailjs/browser';
+import { EMAIL_CONFIG } from '../config/email';
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -22,15 +23,15 @@ export function Contact() {
     
     try {
       await emailjs.send(
-        'hostinger_service',
-        'template_bpczufk',
+        EMAIL_CONFIG.serviceId,
+        EMAIL_CONFIG.templateId,
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
           to_email: 'contact@audexisconsultancy.com'
         },
-        'r4tyQfrnkGZM4zsMJ'
+        EMAIL_CONFIG.publicKey
       );
 
       alert('Thank you! Your message has been sent. We will be with you shortly.');
