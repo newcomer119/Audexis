@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { Upload as UploadIcon, File, X, CheckCircle } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 import { BackgroundAnimation } from './animations/BackgroundAnimation';
 
 export function Upload() {
@@ -46,35 +45,19 @@ export function Upload() {
 
     setIsUploading(true);
     try {
-      // Convert files to base64 strings
-      const filesData = await Promise.all(
-        files.map(async (file) => {
-          return new Promise((resolve) => {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-              resolve({
-                name: file.name,
-                type: file.type,
-                size: file.size,
-                data: reader.result
-              });
-            };
-            reader.readAsDataURL(file);
-          });
-        })
-      );
+      const formData = new FormData();
+      files.forEach(file => {
+        formData.append('files', file);
+      });
 
-      // Send email using EmailJS
-      await emailjs.send(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-        {
-          files: JSON.stringify(filesData),
-          fileNames: files.map(f => f.name).join(', '),
-          totalFiles: files.length
-        },
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS public key
-      );
+      const response = await fetch('http://localhost:5000/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (!response.ok) {
+        throw new Error('Upload failed');
+      }
 
       setUploadStatus('success');
       setFiles([]);

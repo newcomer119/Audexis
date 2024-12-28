@@ -1,8 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { AudioWave } from './animations/AudioWave';
+import emailjs from '@emailjs/browser';
 
 export function Contact() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (isSubmitting) return;
+    
+    setIsSubmitting(true);
+    alert('Sending your message...');
+    
+    try {
+      await emailjs.send(
+        'hostinger_service',
+        'template_bpczufk',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'contact@audexisconsultancy.com'
+        },
+        'r4tyQfrnkGZM4zsMJ'
+      );
+
+      alert('Thank you! Your message has been sent. We will be with you shortly.');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Error sending email:', error);
+      alert('Sorry, there was an error sending your message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
+
   return (
     <section id="contact" className="py-16 sm:py-20 relative bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
       <AudioWave />
@@ -13,12 +60,15 @@ export function Contact() {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 px-4">
           <div className="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-lg shadow-lg">
-            <form className="space-y-4 sm:space-y-6">
+            <form className="space-y-4 sm:space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
                 <input
                   type="text"
                   id="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
                   className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400"
                 />
               </div>
@@ -27,6 +77,9 @@ export function Contact() {
                 <input
                   type="email"
                   id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
                   className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400"
                 />
               </div>
@@ -35,14 +88,18 @@ export function Contact() {
                 <textarea
                   id="message"
                   rows={4}
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
                   className="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-blue-500 dark:focus:border-blue-400 focus:ring-blue-500 dark:focus:ring-blue-400"
                 ></textarea>
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors duration-200"
+                disabled={isSubmitting}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md transition-colors duration-200 disabled:bg-blue-400"
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
@@ -52,7 +109,7 @@ export function Contact() {
                 <Mail className="h-6 w-6 text-blue-600 dark:text-blue-400 mt-1" />
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-gray-900 dark:text-white">Email</h3>
-                  <p className="mt-1 text-gray-600 dark:text-gray-300">contact@audexis.com</p>
+                  <p className="mt-1 text-gray-600 dark:text-gray-300">contact@audexisconsultancy.com</p>
                 </div>
               </div>
             </div>
