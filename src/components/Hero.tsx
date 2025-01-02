@@ -2,38 +2,38 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import BusinessImage from "../image/Buisness.jpg";
-import LawyerImage from "../image/Lawyer.jpg";
+import LawyerImage from "../image/Lawyer.jpg"; 
 import MedicalImage from "../image/Doctor2.jpeg";
 import { FAQ } from "./sections/FAQ";
 import { Security } from "./sections/Security";
 import { Blog } from "./sections/Blog";
 import HomePage from "../image/TP.png"
 const slides = [
-  {
-    "image": HomePage,
-    "title": "Welcome to Audexis",
-     "description": "At Audexis, we specialize in providing fast, accurate, and reliable transcription services tailored to meet your needs."
-  },
-  {
-    image: LawyerImage,
-    title: "Legal Transcription Excellence",
-    description:
-      "Precise documentation for legal proceedings and corporate meetings",
-  },
-  // added few comments
-  {
-    image: MedicalImage,
-    title: "Medical Expertise",
-    description:
-      "Specialized transcription services for healthcare professionals",
-  },
-  {
-    image: BusinessImage,
-    title: "Global Business Solutions",
-    description:
-      "Multi-language transcription services for international enterprises",
-  },
-];
+    {
+      "image": HomePage,
+      "title": "Welcome to Audexis",
+      "description": "At Audexis, we specialize in providing fast, accurate, and reliable transcription services tailored to meet your needs."
+    },
+    {
+      image: LawyerImage,
+      title: "Legal Transcription Excellence",
+      description:
+        "Precise documentation for legal proceedings and corporate meetings",
+    },
+    // added few comments
+    {
+      image: MedicalImage,
+      title: "Medical Expertise",
+      description:
+        "Specialized transcription services for healthcare professionals",
+    },
+    {
+      image: BusinessImage,
+      title: "Global Business Solutions",
+      description:
+        "Multi-language transcription services for international enterprises",
+    },
+  ];
 
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
