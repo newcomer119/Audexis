@@ -5,7 +5,7 @@ import './index.css';
 import './styles/animations.css';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import favicon from './faviconio.png'
+import favicon from './Audexis2.png'
 
 
 const rootElement = document.getElementById('root');
