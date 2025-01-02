@@ -110,7 +110,7 @@ export function Contact() {
                 <Mail className="h-6 w-6 text-blue-600 dark:text-blue-400 mt-1" />
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-gray-900 dark:text-white">Email</h3>
-                  <p className="mt-1 text-gray-600 dark:text-gray-300">contact@audexisconsultancy.com</p>
+                  <p className="mt-1 text-gray-600 dark:text-gray-300">contactus@audexisconsultancy.com</p>
                 </div>
               </div>
             </div>
@@ -129,9 +129,7 @@ export function Contact() {
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-gray-900 dark:text-white">Address</h3>
                   <p className="mt-1 text-gray-600 dark:text-gray-300">
-                    123 Business Avenue<br />
-                    Suite 100<br />
-                    New Delhi, 110001
+                    India, New Delhi
                   </p>
                 </div>
               </div>

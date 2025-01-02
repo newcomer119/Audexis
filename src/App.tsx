@@ -13,6 +13,9 @@ import { LegalTranscriptionPage } from "./pages/services/LegalTranscription";
 import { WhyAudexis } from "./components/why-audexis/WhyAudexis";
 import { ScrollToTop } from "./components/ScrollToTop.tsx";
 import { MessageCircle } from "lucide-react";
+import { GlobalTranscriptionPage } from "./pages/services/GlobalTranscription.tsx";
+import { GeneralTranscriptionPage } from "./pages/services/GeneralTranscription.tsx";
+import { MedicalTranscriptionPage } from "./pages/services/MedicalTranscription.tsx";
 
 function HomePage() {
   return (
@@ -34,9 +37,12 @@ export function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/upload" element={<Upload />} />
+            <Route path="/upload" element={<Upload />} />   
             <Route path="/about" element={<About />} />
             <Route path="/services/legal" element={<LegalTranscriptionPage />} />
+            <Route path="/services/general" element={<GeneralTranscriptionPage />} />
+            <Route path="/services/medical" element={<MedicalTranscriptionPage />} />
+            <Route path="/services/global" element={<GlobalTranscriptionPage />} />
             <Route path="/why-audexis" element={<WhyAudexis />} />
           </Routes>
           <Footer />
