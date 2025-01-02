@@ -16,18 +16,22 @@ import { Contact } from '../Contact';
 
 const ServiceDetails = () => {
   return (
-    <div className="mb-16">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Client Support & Expertise */}
+    <div className="mb-16 space-y-12">
+      {/* Main Grid - Client Support, Expertise, and High Quality */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Client Support */}
         <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
           <div className="flex items-center gap-3 mb-4">
             <HeadphonesIcon className="w-6 h-6 text-blue-500" />
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Client Support</h3>
           </div>
-          <p className="text-gray-700 dark:text-gray-300 mb-6">
+          <p className="text-gray-700 dark:text-gray-300">
             Our main focus is to work hand in hand with clients to achieve their goals with ease.
           </p>
-          
+        </div>
+
+        {/* Expertise */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
           <div className="flex items-center gap-3 mb-4">
             <Users className="w-6 h-6 text-blue-500" />
             <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Expertise</h3>
@@ -37,7 +41,7 @@ const ServiceDetails = () => {
           </p>
         </div>
 
-        {/* High Quality & Specializations */}
+        {/* High Quality */}
         <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
           <div className="flex items-center gap-3 mb-4">
             <Award className="w-6 h-6 text-blue-500" />
@@ -49,36 +53,85 @@ const ServiceDetails = () => {
         </div>
       </div>
 
-      {/* Specializations Section */}
-      <div className="mt-8 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-        <div className="flex items-center gap-3 mb-4">
-          <Briefcase className="w-6 h-6 text-blue-500" />
-          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Specializations</h3>
+      {/* Specializations & Cost Effectiveness - Full Width Sections */}
+      <div className="grid grid-cols-1 gap-12">
+        {/* Specializations Section */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg">
+          <div className="flex flex-col items-center justify-center text-center mb-8">
+            <Briefcase className="w-8 h-8 text-blue-500 mb-3" />
+            <h3 className="text-3xl font-semibold text-gray-900 dark:text-white">Specializations</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
+              <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">Legal Proceedings</h4>
+              <p className="text-gray-700 dark:text-gray-300">
+                Specialization in all types of legal proceedings including Trials, Hearings, Deposition, EUOs, pre & postnuptial agreements, and others.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
+              <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">Interview Transcripts</h4>
+              <p className="text-gray-700 dark:text-gray-300">
+                Specialization in doing the transcripts of any types of projects including One-To-One Interviews, Focus Group Interviews, Telecasts, News Broadcasts, Sporting Events Commentaries, Medical Research Interview focusing on all types of cancers, medicines, and medical specialties.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
+              <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">Format Handling</h4>
+              <p className="text-gray-700 dark:text-gray-300">
+                Specialization of handing a different types of formats for transcriptions including specific word format and templates, and specific excel formats per the clients' requirements.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
+              <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">Video Subtitling</h4>
+              <p className="text-gray-700 dark:text-gray-300">
+                Specialization for subtitling of variable formats of video files.
+              </p>
+            </div>
+          </div>
         </div>
-        <ul className="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300">
-          <li>Specialization in all types of legal proceedings including Trials, Hearings, Deposition, EUOs, pre & postnuptial agreements, and others.</li>
-          <li>Specialization in doing the transcripts of any types of projects including One-To-One Interviews, Focus Group Interviews, Telecasts, News Broadcasts, Sporting Events Commentaries, Medical Research Interview focusing on all types of cancers, medicines, and medical specialties.</li>
-          <li>Specialization of handing a different types of formats for transcriptions including specific word format and templates, and specific excel formats per the clients' requirements.</li>
-          <li>Socialization for subtitling of variable formats of video files.</li>
-        </ul>
+
+        {/* Cost Effectiveness Section */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg">
+          <div className="flex flex-col items-center justify-center text-center mb-8">
+            <DollarSign className="w-8 h-8 text-blue-500 mb-3" />
+            <h3 className="text-3xl font-semibold text-gray-900 dark:text-white">Cost Effectiveness</h3>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
+              <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">General Transcriptions</h4>
+              <p className="text-gray-700 dark:text-gray-300">
+                We offer a very competitive pricing starting from $0.90/minute of English to English General Transcriptions and $2.90/minute for specific European language translations.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
+              <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">Sample Transcriptions</h4>
+              <p className="text-gray-700 dark:text-gray-300">
+                We provide a 50-70 of sample Transcription/Translation without any cost to satisfy our clients' quality parameters.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
+              <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">Legal Transcriptions</h4>
+              <p className="text-gray-700 dark:text-gray-300">
+                We offer a very competitive pricing starting from $1.00/page for specific Legal Transcriptions.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
+              <h4 className="font-semibold mb-2 text-gray-900 dark:text-white">Sample Legal Transcriptions</h4>
+              <p className="text-gray-700 dark:text-gray-300">
+                We provide a 100 pages of sample Legal Transcription without any cost to satisfy our clients' quality parameters.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* Cost Effectiveness Section */}
-      <div className="mt-8 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
-        <div className="flex items-center gap-3 mb-4">
-          <DollarSign className="w-6 h-6 text-blue-500" />
-          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Cost Effectiveness</h3>
-        </div>
-        <ul className="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300">
-          <li>We offer a very competitive pricing starting from $0.90/minute of English to English General Transcriptions and $2.90/minute for specific European language translations.</li>
-          <li>We provide a 50-70 of sample Transcription/Translation without any cost to satisfy our clients' quality parameters.</li>
-          <li>We offer a very competitive pricing starting from $1.00/page for specific Legal Transcriptions.</li>
-          <li>We provide a 100 pages of sample Legal Transcription without any cost to satisfy our clients' quality parameters.</li>
-        </ul>
-      </div>
-
-      {/* Turnaround Time & Zero Payment */}
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Turnaround Time & Zero Payment - Two Columns */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
           <div className="flex items-center gap-3 mb-4">
             <Clock className="w-6 h-6 text-blue-500" />
