@@ -5,13 +5,13 @@ export function Testimonials() {
   const testimonials = [
     {
       quote: "Audexis has transformed how we handle our legal transcriptions. Their accuracy and turnaround time are unmatched.",
-      author: "David Miller",
-      role: "Legal Director, Miller & Associates"
+      author: "Client",
+      role: "Legal Director"
     },
     {
       quote: "The quality of medical transcriptions we receive from Audexis is consistently excellent. They understand our specialized terminology.",
-      author: "Dr. Sarah Chen",
-      role: "Chief of Medicine, Metropolitan Hospital"
+      author: "Client",
+      role: "Chief of Medicine"
     }
   ];
 

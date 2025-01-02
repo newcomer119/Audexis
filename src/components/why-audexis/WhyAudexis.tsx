@@ -2,8 +2,105 @@ import React from 'react';
 import { BackgroundAnimation } from '../animations/BackgroundAnimation';
 import { Features } from './Features';
 import { Testimonials } from './Testimonials';
-import { Stats } from './Stats';
+import { 
+  HeadphonesIcon, 
+  Users, 
+  Award, 
+  Briefcase, 
+  Clock, 
+  Shield, 
+  DollarSign 
+} from 'lucide-react';
+
 import { Contact } from '../Contact';
+
+const ServiceDetails = () => {
+  return (
+    <div className="mb-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Client Support & Expertise */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+          <div className="flex items-center gap-3 mb-4">
+            <HeadphonesIcon className="w-6 h-6 text-blue-500" />
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Client Support</h3>
+          </div>
+          <p className="text-gray-700 dark:text-gray-300 mb-6">
+            Our main focus is to work hand in hand with clients to achieve their goals with ease.
+          </p>
+          
+          <div className="flex items-center gap-3 mb-4">
+            <Users className="w-6 h-6 text-blue-500" />
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Expertise</h3>
+          </div>
+          <p className="text-gray-700 dark:text-gray-300">
+            We have an excellent team of Transcribers/Native Translator to deliver errorfree transcripts.
+          </p>
+        </div>
+
+        {/* High Quality & Specializations */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+          <div className="flex items-center gap-3 mb-4">
+            <Award className="w-6 h-6 text-blue-500" />
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">High Quality</h3>
+          </div>
+          <p className="text-gray-700 dark:text-gray-300">
+            We provide a guaranteed high quality transcription/translation and transcription related end-to-end services.
+          </p>
+        </div>
+      </div>
+
+      {/* Specializations Section */}
+      <div className="mt-8 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+        <div className="flex items-center gap-3 mb-4">
+          <Briefcase className="w-6 h-6 text-blue-500" />
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Specializations</h3>
+        </div>
+        <ul className="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+          <li>Specialization in all types of legal proceedings including Trials, Hearings, Deposition, EUOs, pre & postnuptial agreements, and others.</li>
+          <li>Specialization in doing the transcripts of any types of projects including One-To-One Interviews, Focus Group Interviews, Telecasts, News Broadcasts, Sporting Events Commentaries, Medical Research Interview focusing on all types of cancers, medicines, and medical specialties.</li>
+          <li>Specialization of handing a different types of formats for transcriptions including specific word format and templates, and specific excel formats per the clients' requirements.</li>
+          <li>Socialization for subtitling of variable formats of video files.</li>
+        </ul>
+      </div>
+
+      {/* Cost Effectiveness Section */}
+      <div className="mt-8 bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+        <div className="flex items-center gap-3 mb-4">
+          <DollarSign className="w-6 h-6 text-blue-500" />
+          <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Cost Effectiveness</h3>
+        </div>
+        <ul className="list-disc pl-6 space-y-3 text-gray-700 dark:text-gray-300">
+          <li>We offer a very competitive pricing starting from $0.90/minute of English to English General Transcriptions and $2.90/minute for specific European language translations.</li>
+          <li>We provide a 50-70 of sample Transcription/Translation without any cost to satisfy our clients' quality parameters.</li>
+          <li>We offer a very competitive pricing starting from $1.00/page for specific Legal Transcriptions.</li>
+          <li>We provide a 100 pages of sample Legal Transcription without any cost to satisfy our clients' quality parameters.</li>
+        </ul>
+      </div>
+
+      {/* Turnaround Time & Zero Payment */}
+      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+          <div className="flex items-center gap-3 mb-4">
+            <Clock className="w-6 h-6 text-blue-500" />
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Shortest Turnaround Time</h3>
+          </div>
+          <p className="text-gray-700 dark:text-gray-300">
+            Turnaround time for deliveries can be provided according to Clients' locations instead of IST for specific projects to match the timeline requirements.
+          </p>
+        </div>
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
+          <div className="flex items-center gap-3 mb-4">
+            <Shield className="w-6 h-6 text-blue-500" />
+            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Zero Payment Guarantee</h3>
+          </div>
+          <p className="text-gray-700 dark:text-gray-300">
+            At Audexis, we provide a guaranteed turnaround commitment with no extra cost, failing which we charge zero payment.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export function WhyAudexis() {
   return (
@@ -18,9 +115,8 @@ export function WhyAudexis() {
             Industry-leading transcription services backed by expertise, technology, and dedication
           </p>
         </div>
-        
         <Features />
-        <Stats />
+        <ServiceDetails />
         <Testimonials />
         <Contact />
       </div>

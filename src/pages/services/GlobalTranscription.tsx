@@ -24,25 +24,25 @@ export function GlobalTranscriptionPage() {
           features={[
             "Multiple Language Support",
             "International Business Meetings",
-            "Cross-Cultural Communications",
+            "Technical Document Translation",
             "Global Conference Coverage"
           ]}
           details={[
             {
               title: "Multilingual Services",
-              description: "Expert transcription services in multiple languages with native-speaking professionals and cultural understanding."
+              description: "Expert transcription services in multiple languages with native-speaking professionals and cultural understanding.\n\nOur team of certified linguists ensures accurate translation while maintaining the original context and meaning."
+            },
+            {
+              title: "Technical/Text Translation",
+              description: "Specialized translation of technical documents, legal contracts, and medical records with industry-specific terminology.\n\nWe provide precise translation services for research papers, medical studies, legal documentation, and technical manuals while maintaining strict confidentiality and accuracy."
             },
             {
               title: "International Business",
-              description: "Accurate transcription of international business meetings, negotiations, and global corporate events."
-            },
-            {
-              title: "Cross-Cultural",
-              description: "Professional transcription of cross-cultural communications with attention to cultural nuances and context."
+              description: "Accurate transcription and translation of international business meetings, negotiations, and global corporate events.\n\nOur services include real-time translation, document localization, and cultural adaptation for business communications."
             },
             {
               title: "Global Events",
-              description: "Comprehensive coverage of international conferences, seminars, and multinational corporate meetings."
+              description: "Comprehensive coverage of international conferences, seminars, and multinational corporate meetings.\n\nWe offer simultaneous translation and transcription services for global events, ensuring effective communication across language barriers."
             }
           ]}
         />

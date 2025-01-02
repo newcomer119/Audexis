@@ -29,20 +29,20 @@ export function LegalTranscriptionPage() {
           ]}
           details={[
             {
-              title: "Court Proceedings",
-              description: "Accurate transcription of trials, hearings, and depositions with strict attention to legal terminology and formatting requirements."
+              title: "Court Proceedings & Trials",
+              description: "Accurate transcription of court proceedings including trials, hearings, depositions, and Examinations Under Oath (EUOs). We provide meticulous attention to legal terminology, procedural requirements, and proper formatting for all court-related documentation."
             },
             {
-              title: "Legal Documentation",
-              description: "Precise transcription of contracts, agreements, and legal correspondence maintaining proper legal formatting and structure."
+              title: "Legal Documentation & Agreements",
+              description: "Precise transcription of legal documents including contracts, pre/post-nuptial agreements, and legal correspondence. Our services maintain proper legal formatting and structure while ensuring accuracy in legal terminology and document organization."
             },
             {
-              title: "Law Enforcement",
-              description: "Secure transcription of police interviews, witness statements, and investigation reports with complete confidentiality."
+              title: "Law Enforcement Documentation",
+              description: "Secure and confidential transcription of police interviews, witness statements, investigation reports, and other law enforcement documentation. We understand the sensitive nature of these materials and maintain strict confidentiality protocols."
             },
             {
-              title: "Corporate Legal",
-              description: "Professional transcription of board meetings, shareholder meetings, and compliance documentation with quick turnaround times."
+              title: "Corporate Legal Services",
+              description: "Professional transcription of corporate legal matters including board meetings, shareholder meetings, compliance documentation, and legal proceedings. We deliver quick turnaround times while maintaining accuracy and proper legal formatting."
             }
           ]}
         />

@@ -22,8 +22,8 @@ export function About() {
         </div>
 
         <Mission />
-        <Stats />
-        <Team />
+        
+        
         <Testimonials />
         <Contact />
       </div>

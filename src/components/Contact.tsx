@@ -119,7 +119,7 @@ export function Contact() {
                 <Phone className="h-6 w-6 text-blue-600 dark:text-blue-400 mt-1" />
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-gray-900 dark:text-white">Phone</h3>
-                  <p className="mt-1 text-gray-600 dark:text-gray-300">+91 9104411978</p>
+                  <p className="mt-1 text-gray-600 dark:text-gray-300">+91 9811175099</p>
                 </div>
               </div>
             </div>

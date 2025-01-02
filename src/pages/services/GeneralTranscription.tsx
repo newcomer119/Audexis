@@ -30,19 +30,19 @@ export function GeneralTranscriptionPage() {
           details={[
             {
               title: "Business Meetings",
-              description: "Accurate transcription of corporate meetings, conferences, and presentations with quick turnaround times."
+              description: "Accurate transcription of corporate meetings, conferences, and presentations with quick turnaround times.\n\nOur experienced team ensures every detail is captured accurately, including speaker identification and time stamps when needed."
             },
             {
               title: "Interviews",
-              description: "Professional transcription of interviews, focus groups, and market research sessions with attention to detail."
+              description: "Professional transcription of interviews, focus groups, and market research sessions with attention to detail.\n\nWe handle multiple speaker scenarios with clarity, ensuring accurate attribution and context preservation."
             },
             {
-              title: "Academic Content",
-              description: "Precise transcription of lectures, seminars, and educational content with proper formatting and terminology."
+              title: "Conference Calls",
+              description: "Expert transcription of virtual meetings, conference calls, and online presentations with precision.\n\nWe handle both audio and video conference recordings, providing clear speaker identification and accurate documentation of all discussions."
             },
             {
-              title: "Digital Media",
-              description: "High-quality transcription of podcasts, webinars, and other digital content with timestamps and speaker identification."
+              title: "Focus Group Transcriptions",
+              description: "Specialized transcription services for focus groups, market research sessions, and group discussions.\n\nOur team expertly manages multiple speaker scenarios, capturing overlapping conversations and maintaining speaker consistency throughout."
             }
           ]}
         />

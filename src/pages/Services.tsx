@@ -17,7 +17,7 @@ export function ServicesPage() {
           </p>
         </div>
 
-        <div className="space-y-20">
+        <div className="space-y-48 space-x-7">
           <ServiceSection
             id="legal"
             title="Legal Transcription"
@@ -31,19 +31,19 @@ export function ServicesPage() {
             details={[
               {
                 title: "Court Proceedings",
-                description: "Accurate transcription of trials, hearings, and depositions with strict attention to legal terminology and formatting requirements."
+                description: "Accurate transcription of trials, hearings, and depositions with strict attention to legal terminology and formatting requirements.\n\nOur expert team ensures every detail is captured with precision, maintaining the highest standards of accuracy required in legal proceedings."
               },
               {
                 title: "Legal Documentation",
-                description: "Precise transcription of contracts, agreements, and legal correspondence maintaining proper legal formatting and structure."
+                description: "Precise transcription of contracts, agreements, and legal correspondence maintaining proper legal formatting and structure.\n\nWe handle all types of legal documents with meticulous attention to detail and formatting requirements."
               },
               {
                 title: "Law Enforcement",
-                description: "Secure transcription of police interviews, witness statements, and investigation reports with complete confidentiality."
+                description: "Secure transcription of police interviews, witness statements, and investigation reports with complete confidentiality.\n\nOur specialized team understands the critical nature of law enforcement documentation and maintains strict security protocols."
               },
               {
                 title: "Corporate Legal",
-                description: "Professional transcription of board meetings, shareholder meetings, and compliance documentation with quick turnaround times."
+                description: "Professional transcription of board meetings, shareholder meetings, and compliance documentation with quick turnaround times.\n\nWe provide comprehensive solutions for all corporate legal transcription needs while maintaining accuracy and confidentiality."
               }
             ]}
           />
