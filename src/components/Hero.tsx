@@ -35,6 +35,21 @@ const slides = [
     },
   ];
 
+const getServicePath = (title: string) => {
+  switch (title) {
+    case "Welcome to Audexis":
+      return "/services/general";
+    case "Legal Transcription Excellence":
+      return "/services/legal";
+    case "Medical Expertise":
+      return "/services/medical";
+    case "Global Business Solutions":
+      return "/services/global";
+    default:
+      return "/services";
+  }
+};
+
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
 
@@ -91,7 +106,7 @@ export function Hero() {
                   </p>
                   <div>
                     <Link
-                      to="/services"
+                      to={getServicePath(slide.title)}
                       className="inline-flex items-center px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-gray-900 transition-colors duration-300"
                     >
                       Get Started
