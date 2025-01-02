@@ -3,11 +3,12 @@ import { Headphones, Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { ThemeToggle } from './ThemeToggle';
 import AudexisLogo from '../Audexis1.jpg'
+import Logo from '../Audexis2.png'
 
 const serviceLinks = [
   { name: 'Legal Transcription', path: '/services/legal' },
   { name: 'General Transcription', path: '/services/general' },
-  { name: 'Medical Transcription', path: '/services/medical' },
+  { name: 'Medical Transcription', path: '/services/medical' }, 
   { name: 'Global Transcription', path: '/services/global' }
 ];
 
@@ -25,14 +26,14 @@ export function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex flex-col items-center">
             <img 
-              src={AudexisLogo} 
+              src={Logo} 
               alt="Audexis Logo" 
-              className="h-8 w-8 rounded-full"
-            />
-            <span className="ml-2 text-xl font-bold text-gray-900 dark:text-white">
-              Audexis
+                className="h-8 w-auto"
+              />
+              <span className="text-sm font-bold text-[#2B9BCA] dark:text-[#FFFFFF]">
+              AUDEXIS CONSULTANCY
             </span>
           </Link>
           
