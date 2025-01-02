@@ -96,7 +96,7 @@ export function Navbar() {
             </a>
             <ThemeToggle />
             <Link 
-              to="/upload" 
+              to="/why-audexis" 
               className="btn-primary py-2 px-4"
             >
               Get Started
@@ -136,7 +136,7 @@ export function Navbar() {
             <a href="#contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
               Contact
             </a>
-            <Link to="/upload" className="block px-3 py-2 btn-primary text-center">
+            <Link to="/why-audexis" className="block px-3 py-2 btn-primary text-center">
               Get Started
             </Link>
           </div>

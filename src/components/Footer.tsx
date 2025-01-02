@@ -1,5 +1,5 @@
 import React from 'react';
-import { Headphones } from 'lucide-react';
+
 
 export function Footer() {
   return (
@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center">
-              <Headphones className="h-8 w-8 text-indigo-400" />
+              <img src="/Audexis2.png" alt="Audexis" className="h-8 w-8" />
               <span className="ml-2 text-xl font-bold">Audexis</span>
             </div>
             <p className="mt-4 text-gray-400">
