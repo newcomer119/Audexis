@@ -44,6 +44,12 @@ export function Navbar() {
 
           <div className="hidden md:flex items-center space-x-8">
             <Link 
+              to="/why-audexis"
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+            >
+              Why Audexis
+            </Link>
+            <Link 
               to="/about" 
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
             >
@@ -71,12 +77,6 @@ export function Navbar() {
                 </div>
               )}
             </div>
-            <Link 
-              to="/why-audexis"
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-            >
-              Why Audexis
-            </Link>
             <a 
               href="#how-it-works"
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
@@ -104,7 +104,16 @@ export function Navbar() {
           isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 pointer-events-none'
         }`}>
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 rounded-b-lg shadow-lg">
-            <Link to="/about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
+            <Link
+              to="/why-audexis"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+              Why Audexis
+            </Link>
+            <Link 
+              to="/about" 
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
               About
             </Link>
             {serviceLinks.map((service) => (
@@ -116,12 +125,6 @@ export function Navbar() {
                 {service.name}
               </Link>
             ))}
-            <Link
-              to="/why-audexis"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
-            >
-              Why Audexis
-            </Link>
             <a href="#how-it-works" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
               How It Works
             </a>
