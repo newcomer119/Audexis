@@ -6,10 +6,26 @@ import AudexisLogo from '../Audexis2.png'
 import Logo from '../aude1.png'
 
 const serviceLinks = [
-  { name: 'Legal Transcription', path: '/services/legal' },
-  { name: 'General Transcription', path: '/services/general' },
-  { name: 'Medical Transcription', path: '/services/medical' },
-  { name: 'Global Translations', path: '/services/global' }
+  { 
+    name: 'Legal Transcription', 
+    path: '/services/legal',
+    caption: 'Court proceedings, depositions, and legal documentation'
+  },
+  { 
+    name: 'General Transcription', 
+    path: '/services/general',
+    caption: 'Interviews, meetings, and multimedia content'
+  },
+  { 
+    name: 'Medical Transcription', 
+    path: '/services/medical',
+    caption: 'Clinical reports, patient records, and medical dictations'
+  },
+  { 
+    name: 'Global Translations', 
+    path: '/services/global',
+    caption: 'Multi-language translation and localization services'
+  }
 ];
 
 export function Navbar() {
@@ -21,6 +37,12 @@ export function Navbar() {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
   }, [location]);
+
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+    const contactSection = document.querySelector('#contact');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-900 shadow-md">
@@ -69,14 +91,15 @@ export function Navbar() {
                 <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-50">
+                <div className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-50">
                   {serviceLinks.map((service) => (
                     <Link
                       key={service.path}
                       to={service.path}
                       className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
-                      {service.name}
+                      <div className="font-medium">{service.name}</div>
+                      <div className="text-sm text-gray-500 dark:text-gray-400">{service.caption}</div>
                     </Link>
                   ))}
                 </div>
@@ -102,7 +125,8 @@ export function Navbar() {
             </a>
             <ThemeToggle />
             <Link
-              to="/why-audexis"
+              to="#contact"
+              onClick={scrollToContact}
               className="btn-primary py-2 px-4"
             >
               Get Started
@@ -126,7 +150,8 @@ export function Navbar() {
                 to={service.path}
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
               >
-                {service.name}
+                <div>{service.name}</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400">{service.caption}</div>
               </Link>
             ))}
             <Link
@@ -141,7 +166,11 @@ export function Navbar() {
             <a href="#contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
               Contact
             </a>
-            <Link to="/why-audexis" className="block px-3 py-2 btn-primary text-center">
+            <Link 
+              to="#contact" 
+              onClick={scrollToContact} 
+              className="block px-3 py-2 btn-primary text-center"
+            >
               Get Started
             </Link>
           </div>
