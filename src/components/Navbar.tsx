@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Headphones, Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { ThemeToggle } from './ThemeToggle';
-import AudexisLogo from '../Audexis1.jpg'
-import Logo from '../Audexis2.png'
+import AudexisLogo from '../Audexis2.png'
+import Logo from '../aude1.png'
 
 const serviceLinks = [
   { name: 'Legal Transcription', path: '/services/legal' },
@@ -28,11 +28,16 @@ export function Navbar() {
         <div className="flex justify-between h-16 items-center">
           <Link to="/" className="flex flex-col items-center">
             <img 
-              src={Logo} 
+              src={AudexisLogo}
               alt="Audexis Logo" 
-                className="h-8 w-auto"
-              />
-              <span className="text-sm font-bold text-[#2B9BCA] dark:text-[#FFFFFF]">
+              className="h-8 w-auto bg-blend-screen block dark:hidden"
+            />
+            <img 
+              src={Logo}
+              alt="Audexis Logo Dark" 
+              className="h-8 w-auto bg-blend-screen hidden dark:block"
+            />
+            <span className="text-sm font-bold text-[#2B9BCA] dark:text-[#FFFFFF]">
               AUDEXIS CONSULTANCY
             </span>
           </Link>
