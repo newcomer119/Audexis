@@ -60,14 +60,6 @@ export function Hero() {
     return () => clearInterval(timer);
   }, []);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
-
   return (
     <div>
       {/* Hero Slider Section */}
@@ -118,34 +110,18 @@ export function Hero() {
           </div>
         ))}
 
-        {/* Navigation buttons */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex items-center space-x-4">
-          <button
-            onClick={prevSlide}
-            className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="w-6 h-6 text-white" />
-          </button>
-          <div className="flex space-x-2">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                  currentSlide === index ? 'w-8 bg-white' : 'bg-white/50'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-          <button
-            onClick={nextSlide}
-            className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="w-6 h-6 text-white" />
-          </button>
+        {/* Add slide indicators */}
+        <div className="absolute bottom-9 left-0 right-0 z-30 flex justify-center gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`h-1 rounded-full transition-all duration-300 ${
+                currentSlide === index ? 'w-4 bg-white' : 'w-4 bg-white/50'
+              }`}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
 

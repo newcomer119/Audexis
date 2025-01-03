@@ -21,10 +21,14 @@ export function CoreValues() {
   ];
 
   return (
-    <div className="mb-16">
+    <div className="mb-10">
       <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
-        <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-          Quality, accuracy, and Transparency with timely delivery are critical, especially in our transcription services and our moto is to consistently maintain. Quality is achieved through a meticulous process, where we ensure that every transcription is error-free, grammatically correct, and formatted according to our clients' specific needs.
+        <p className="text-gray-700 flex flex-col justify-center dark:text-gray-300 leading-relaxed font-medium text-center">
+          Quality, accuracy, and transparency with timely delivery are critical, especially in our transcription services.
+          <br />
+          Our motto is to consistently maintain the highest standards in everything we do.
+          <br />
+          Quality is achieved through a meticulous process, ensuring error-free, grammatically correct transcriptions formatted to our clients' needs.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
