@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import BusinessImage from "../image/Buisness.jpg";
-import LawyerImage from "../image/Lawyer.jpg"; 
+import LawyerImage from "../image/Lawyer01.png"; 
 import MedicalImage from "../image/Doctor2.jpeg";
 import { FAQ } from "./sections/FAQ";
 import { Security } from "./sections/Security";
