@@ -9,7 +9,7 @@ const serviceLinks = [
   { name: 'Legal Transcription', path: '/services/legal' },
   { name: 'General Transcription', path: '/services/general' },
   { name: 'Medical Transcription', path: '/services/medical' },
-  { name: 'Global Transcription', path: '/services/global' }
+  { name: 'Global Translations', path: '/services/global' }
 ];
 
 export function Navbar() {

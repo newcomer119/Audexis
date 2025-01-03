@@ -43,9 +43,16 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <Link to="/about" className="hover:text-[#2B9BCA] transition-colors">
+                <a 
+                  href="#about"
+                  className="hover:text-[#2B9BCA] transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                >
                   About Us
-                </Link>
+                </a>
               </li>
               <li>
                 <a 

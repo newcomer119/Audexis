@@ -13,74 +13,16 @@ export function About() {
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             About Audexis
           </h1>
-          <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Audexis is revolutionizing the transcription industry with cutting-edge technology and unwavering commitment to accuracy and client satisfaction.  
+          <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-6xl mx-auto leading-relaxed font-semibold">
+            Audexis stands at the forefront of innovation in the transcription industry, combining cutting-edge technology with an unwavering commitment to accuracy and client satisfaction, while continuously pushing the boundaries of what's possible in language services. Our distinguished team comprises highly skilled general and medical transcriptionists and translators, each bringing over 15 years of professional expertise to every project we undertake, ensuring the highest standards of quality and precision in every deliverable. Our comprehensive services span across all Global Languages, demonstrating our exceptional versatility in the field of transcription and translation, while maintaining consistent excellence across diverse linguistic challenges and cultural nuances.
+            <br /><br />
+            <span className="mb-2">
+            We have developed particular expertise in handling diverse survey recordings, adapting to various format requirements including Q&A structures, specialized Excel formats, and .txt file outputs, all while ensuring data integrity and maintaining client confidentiality. Additionally, our video subtitling services cover all types of content, from corporate training materials to entertainment media, ensuring precise and culturally appropriate translations that resonate with target audiences worldwide. We pride ourselves on our flexible approach, operating across different time zones and delivering end-to-end transcription solutions tailored precisely to our clients' specific requirements and deadlines, supported by our robust quality assurance processes and dedicated project management team.
+            </span>
           </p>
         </div>
 
         <Mission />
-
-        {/* Services Section */}
-        <div className="py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Our Services
-            </h2>
-            <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-              Comprehensive transcription and translation solutions tailored to your needs
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
-            <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md">
-              <div className="flex items-start space-x-4">
-                <Users className="w-8 h-8 text-blue-600 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Expert Team</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    We are having a team of general/medical Transcribers/Translator with over a 15 years of experience.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md">
-              <div className="flex items-start space-x-4">
-                <Globe className="w-8 h-8 text-blue-600 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Global Languages</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    We are specialized in doing Transcription/Translation of all the Global Languages.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md">
-              <div className="flex items-start space-x-4">
-                <FileText className="w-8 h-8 text-blue-600 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Multiple Formats</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    We specialize in transcribing all types of survey recordings with different formats including Q&A formats, specialized excel formats, .txt formats.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white dark:bg-gray-700 rounded-lg p-6 shadow-md">
-              <div className="flex items-start space-x-4">
-                <Video className="w-8 h-8 text-blue-600 flex-shrink-0" />
-                <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Video Services</h3>
-                  <p className="text-gray-700 dark:text-gray-300">
-                    We also do Video Subtitling of all types of recordings. We work as per our client's requirements/time zones providing end to end transcription services/solutions.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
         <Testimonials />
         <Contact />

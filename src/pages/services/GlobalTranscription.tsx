@@ -10,7 +10,7 @@ export function GlobalTranscriptionPage() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Global Transcription Services
+            Global Translations Services
           </h1>
           <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             Multilingual transcription services for international businesses and organizations
@@ -19,7 +19,7 @@ export function GlobalTranscriptionPage() {
 
         <ServiceSection
           id="global"
-          title="Global Transcription"
+          title="Global Translations"
           description="Comprehensive multilingual transcription services with cultural expertise and linguistic accuracy."
           features={[
             "Multiple Language Support",
