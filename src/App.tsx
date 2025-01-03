@@ -16,8 +16,11 @@ import { MessageCircle } from "lucide-react";
 import { GeneralTranscriptionPage } from './pages/services/GeneralTranscription';
 import { MedicalTranscriptionPage } from './pages/services/MedicalTranscription';
 import { GlobalTranscriptionPage } from './pages/services/GlobalTranscription';
+import { useScrollToHash } from './components/useScrollToHash';
 
 function HomePage() {
+  useScrollToHash();
+
   return (
     <>
       <Hero />

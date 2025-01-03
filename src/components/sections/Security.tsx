@@ -41,7 +41,7 @@ export function Security() {
   ];
 
   return (
-    <div className="bg-gray-900 text-white py-16 px-6">
+    <div id="security" className="bg-gray-900 text-white py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Security & Confidentiality</h2>

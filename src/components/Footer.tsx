@@ -8,7 +8,9 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center">
-              <span className="ml-2 text-xl font-bold ">Audexis</span>
+              <Link to="/" className="text-xl font-bold hover:text-[#2B9BCA] transition-colors">
+                Audexis
+              </Link>
             </div>
             <p className="mt-4 text-gray-400">
               Professional transcription services for businesses and individuals.
@@ -43,16 +45,15 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Company</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
-                <a 
-                  href="#about"
+                <Link 
+                  to="/about"
                   className="hover:text-[#2B9BCA] transition-colors"
-                  onClick={(e) => {
-                    e.preventDefault();
+                  onClick={() => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
                 <a 
@@ -69,11 +70,48 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-4">Legal</h3>
+            <h3 className="text-lg font-semibold mb-4">Security & Confidentiality</h3>
             <ul className="space-y-2 text-gray-400">
-              <li>Privacy Policy</li>
-              <li>Terms of Service</li>
-              <li>Cookie Policy</li>
+              <li>
+                <a 
+                  href="/#security" 
+                  className="hover:text-[#2B9BCA] transition-colors"
+                >
+                  Access Control
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/#security" 
+                  className="hover:text-[#2B9BCA] transition-colors"
+                >
+                  Data Privacy
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/#security" 
+                  className="hover:text-[#2B9BCA] transition-colors"
+                >
+                  Secure Storage
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/#security" 
+                  className="hover:text-[#2B9BCA] transition-colors"
+                >
+                  Confidentiality Agreements
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="/#security" 
+                  className="hover:text-[#2B9BCA] transition-colors"
+                >
+                  Data Retention Policy
+                </a>
+              </li>
             </ul>
           </div>
         </div>
