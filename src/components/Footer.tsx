@@ -36,7 +36,7 @@ export function Footer() {
               </li>
               <li>
                 <Link to="/services/global" className="hover:text-[#2B9BCA] transition-colors">
-                  Global Services
+                  Global Translations
                 </Link>
               </li>
             </ul>

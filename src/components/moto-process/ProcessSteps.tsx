@@ -5,7 +5,7 @@ export function ProcessSteps() {
   const steps = [
     {
       icon: FileUp,
-      title: "File Reception & Initial Check",
+      title: "Receipt of Files & Initial Check",
       details: [
         "File Source: Receive audio/video recordings via email, FTP server, Dropbox, etc.",
         "Audio check: Expert quality assessment of recordings"
@@ -24,15 +24,15 @@ export function ProcessSteps() {
       title: "Transcription Process",
       details: [
         "Expert transcribers begin the process",
-        "Regular updates to clients throughout"
+        "Regular updates to clients throughout the project"
       ]
     },
     {
       icon: FileCheck,
       title: "Quality Control",
       details: [
-        "Initial proofreading by Quality Analyst",
-        "Level 2 proofreading for detailed error checking"
+        "Level 1 : proofreading by Quality Analyst",
+        "Level 2 :  proofreading, in some cases, for detailed error checking"
       ]
     },
     {
@@ -41,7 +41,7 @@ export function ProcessSteps() {
       details: [
         "Template verification",
         "Font size and style checking",
-        "Format alignment with client requirements"
+        "Format alignment with client’s specifications/requirements."
       ]
     }
   ];

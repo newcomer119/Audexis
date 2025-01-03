@@ -95,14 +95,6 @@ export function Hero() {
                   <p className="text-xl sm:text-2xl text-white mb-8">
                     {slide.description}
                   </p>
-                  <div>
-                    <Link
-                      to={getServicePath(slide.title)}
-                      className="inline-flex items-center px-8 py-3 border-2 border-white text-white hover:bg-white hover:text-gray-900 transition-colors duration-300"
-                    >
-                      Get Started
-                    </Link>
-                  </div>
                 </div>
               </div>
             </div>
