@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Headphones, Menu, X, ChevronDown } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ThemeToggle } from './ThemeToggle';
 import AudexisLogo from '../Audexis2.png'
 import Logo from '../aude1.png'
+import { scrollToTop } from '../components/scrollUtils';
 
 const serviceLinks = [
   { 
@@ -25,23 +26,67 @@ const serviceLinks = [
     name: 'Global Translations', 
     path: '/services/global',
     caption: 'Multi-language translation and localization services'
+  },
+  { 
+    name: 'Interview Transcription', 
+    path: '/services/interview',
+    caption: 'Research, media, and recruitment interviews'
   }
+];
+
+const whyAudexisLinks = [
+  {
+    name: 'Why Hire Audexis?',
+    path: '/why-audexis',
+  },
+  {
+    name: 'Specializations',
+    path: '/why-audexis',
+  },
+  {
+    name: 'Cost Effectiveness',
+    path: '/why-audexis',
+  },
+  {
+    name: 'Our Clients',
+    path: '/why-audexis',
+  },
 ];
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isWhyAudexisOpen, setIsWhyAudexisOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
+    setIsWhyAudexisOpen(false);
   }, [location]);
 
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
     const contactSection = document.querySelector('#contact');
     contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const currentPath = window.location.pathname;
+    const [targetPath, hash] = href.split('#');
+    
+    if (currentPath === targetPath || (targetPath === '' && hash)) {
+      scrollToTop(hash);
+    } else {
+      navigate(targetPath);
+    }
+  };
+
+  const handleHashNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    scrollToTop(sectionId);
   };
 
   return (
@@ -65,7 +110,9 @@ export function Navbar() {
           </Link>
 
           <div className="flex items-center gap-4 md:hidden">
-            <ThemeToggle />
+            <div title="Change theme">
+              <ThemeToggle />
+            </div>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
@@ -78,12 +125,14 @@ export function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link
               to="/"
+              onClick={(e) => handleNavClick(e, '/')}
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
             >
               Home
             </Link>
             <Link
               to="/about"
+              onClick={(e) => handleNavClick(e, '/about')}
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
             >
               About
@@ -102,6 +151,7 @@ export function Navbar() {
                     <Link
                       key={service.path}
                       to={service.path}
+                      onClick={(e) => handleNavClick(e, service.path)}
                       className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                     >
                       <div className="font-medium">{service.name}</div>
@@ -111,25 +161,46 @@ export function Navbar() {
                 </div>
               )}
             </div>
-            <Link
-              to="/why-audexis"
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
-            >
-              Why Audexis
-            </Link>
+            <div className="relative">
+              <button
+                onClick={() => setIsWhyAudexisOpen(!isWhyAudexisOpen)}
+                className="flex items-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
+              >
+                Why Audexis
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              {isWhyAudexisOpen && (
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-50">
+                  {whyAudexisLinks.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      onClick={(e) => handleNavClick(e, item.path)}
+                      className="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
             <Link
               to="/moto-process"
+              onClick={(e) => handleNavClick(e, '/moto-process')}
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
             >
               Moto/Process
             </Link>
             <a
-              href="#contact"
+              href="/#contact"
+              onClick={(e) => handleHashNavClick(e, 'contact')}
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
             >
               Contact
             </a>
-            <ThemeToggle />
+            <div title="Change theme">
+              <ThemeToggle />
+            </div>
             <Link
               to="#contact"
               onClick={scrollToContact}
@@ -146,12 +217,14 @@ export function Navbar() {
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white dark:bg-gray-900 rounded-b-lg shadow-lg">
             <Link
               to="/"
+              onClick={(e) => handleNavClick(e, '/')}
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
             >
               Home
             </Link>
             <Link
               to="/about"
+              onClick={(e) => handleNavClick(e, '/about')}
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
             >
               About
@@ -160,22 +233,34 @@ export function Navbar() {
               <Link
                 key={service.path}
                 to={service.path}
+                onClick={(e) => handleNavClick(e, service.path)}
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
               >
                 <div>{service.name}</div>
                 <div className="text-sm text-gray-500 dark:text-gray-400">{service.caption}</div>
               </Link>
             ))}
+            {whyAudexisLinks.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                onClick={(e) => handleNavClick(e, item.path)}
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
+              >
+                {item.name}
+              </Link>
+            ))}
             <Link
-              to="/why-audexis"
+              to="/moto-process"
+              onClick={(e) => handleNavClick(e, '/moto-process')}
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800"
             >
-              Why Audexis
+              Moto/Process
             </Link>
             <a href="#how-it-works" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
               How It Works
             </a>
-            <a href="#contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
+            <a href="/#contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
               Contact
             </a>
             <Link 

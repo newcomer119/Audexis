@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import BusinessImage from "../image/Buisness.jpg";
 import LawyerImage from "../image/Lawyer01.png"; 
 import MedicalImage from "../image/Doctor2.jpeg";
+import InterviewImage from "../image/Interview.webp";
 import { FAQ } from "./sections/FAQ";
 import { Security } from "./sections/Security";
 import { Blog } from "./sections/Blog";
@@ -32,6 +33,12 @@ const slides = [
       description:
         "Multi-language transcription services for international enterprises",
     },
+    {
+      image: "https://plus.unsplash.com/premium_photo-1676666379090-e0fc81f41e7e",
+      title: "Interview Transcription",
+      description:
+        "Professional transcription services for interviews, focus groups, and research studies",
+    },
   ];
 
 const getServicePath = (title: string) => {
@@ -44,6 +51,8 @@ const getServicePath = (title: string) => {
       return "/services/medical";
     case "Global Business Solutions":
       return "/services/global";
+    case "Interview Transcription":
+      return "/services/interview";
     default:
       return "/services";
   }
@@ -51,18 +60,27 @@ const getServicePath = (title: string) => {
 
 export function Hero() {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const [isPaused, setIsPaused] = useState<boolean>(false);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
+    if (!isPaused) {
+      const timer = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+      }, 2000);
+      return () => clearInterval(timer);
+    }
+  }, [isPaused]); 
 
   return (
     <div>
       {/* Hero Slider Section */}
-      <div className="relative h-[calc(100vh-64px)] overflow-hidden">
+      <div 
+        className="relative h-[calc(100vh-64px)] overflow-hidden"
+        onMouseDown={() => setIsPaused(true)}
+        onMouseUp={() => setIsPaused(false)}
+        onTouchStart={() => setIsPaused(true)}
+        onTouchEnd={() => setIsPaused(false)}
+      >
         {slides.map((slide, index) => (
           <div
             key={index}
