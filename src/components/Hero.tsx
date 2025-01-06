@@ -66,7 +66,7 @@ export function Hero() {
     if (!isPaused) {
       const timer = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
-      }, 2000);
+      }, 3000);
       return () => clearInterval(timer);
     }
   }, [isPaused]); 
