@@ -90,7 +90,7 @@ const ServiceDetails = () => {
       {/* Specializations & Cost Effectiveness - Full Width Sections */}
       <div className="grid grid-cols-1 gap-12">
         {/* Specializations Section */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg">
+        <div id="specializations" className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg">
           <div className="flex flex-col items-center justify-center text-center mb-8">
             <Briefcase className="w-8 h-8 text-blue-500 mb-3" />
             <h3 className="text-3xl font-semibold text-gray-900 dark:text-white">Specializations</h3>
@@ -127,7 +127,7 @@ const ServiceDetails = () => {
         </div>
 
         {/* Cost Effectiveness Section */}
-        <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg">
+        <div id="cost-effectiveness" className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-lg">
           <div className="flex flex-col items-center justify-center text-center mb-8">
             <DollarSign className="w-8 h-8 text-blue-500 mb-3" />
             <h3 className="text-3xl font-semibold text-gray-900 dark:text-white">Cost Effectiveness</h3>
@@ -182,7 +182,9 @@ export function WhyAudexis() {
           </p>
         </div>
         <ServiceDetails />
-        <Testimonials />
+        <div id="testimonials">
+          <Testimonials />
+        </div>
         <Contact />
       </div>
     </div>

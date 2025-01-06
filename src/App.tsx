@@ -18,6 +18,7 @@ import { MedicalTranscriptionPage } from './pages/services/MedicalTranscription'
 import { GlobalTranscriptionPage } from './pages/services/GlobalTranscription';
 import { useScrollToHash } from './components/useScrollToHash';
 import { InterviewTranscriptionPage } from './pages/services/InterviewTranscription';
+import { CaptioningSubtitlesPage } from './pages/services/CaptioningSubtitles';
 
 function HomePage() {
   useScrollToHash();
@@ -47,6 +48,7 @@ export function App() {
             <Route path="/services/medical" element={<MedicalTranscriptionPage />} />
             <Route path="/services/global" element={<GlobalTranscriptionPage />} />
             <Route path="/services/interview" element={<InterviewTranscriptionPage />} />
+            <Route path="/services/subtitle" element={<CaptioningSubtitlesPage />} />
             <Route path="/why-audexis" element={<WhyAudexis />} />
             <Route path="/moto-process" element={<MotoProcess />} />
           </Routes>

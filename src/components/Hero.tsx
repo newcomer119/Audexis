@@ -34,10 +34,10 @@ const slides = [
         "Multi-language transcription services for international enterprises",
     },
     {
-      image: "https://plus.unsplash.com/premium_photo-1676666379090-e0fc81f41e7e",
-      title: "Interview Transcription",
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85",
+      title: "Subtitle and Captioning",
       description:
-        "Professional transcription services for interviews, focus groups, and research studies",
+        "Professional subtitling and captioning services for videos, films, and multimedia content",
     },
   ];
 
@@ -51,8 +51,8 @@ const getServicePath = (title: string) => {
       return "/services/medical";
     case "Global Business Solutions":
       return "/services/global";
-    case "Interview Transcription":
-      return "/services/interview";
+    case "Subtitle and Captioning":
+      return "/services/subtitles";
     default:
       return "/services";
   }

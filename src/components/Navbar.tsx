@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Headphones, Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ThemeToggle } from './ThemeToggle';
@@ -28,9 +28,9 @@ const serviceLinks = [
     caption: 'Multi-language translation and localization services'
   },
   { 
-    name: 'Interview Transcription', 
-    path: '/services/interview',
-    caption: 'Research, media, and recruitment interviews'
+    name: 'Subtitle & Captioning', 
+    path: '/services/subtitle',
+    caption: 'Video subtitles, closed captions, and multimedia accessibility'
   }
 ];
 
@@ -41,15 +41,15 @@ const whyAudexisLinks = [
   },
   {
     name: 'Specializations',
-    path: '/why-audexis',
+    path: '/why-audexis#specializations',
   },
   {
     name: 'Cost Effectiveness',
-    path: '/why-audexis',
+    path: '/why-audexis#cost-effectiveness',
   },
   {
     name: 'Our Clients',
-    path: '/why-audexis',
+    path: '/why-audexis#testimonials',
   },
 ];
 
@@ -59,12 +59,38 @@ export function Navbar() {
   const [isWhyAudexisOpen, setIsWhyAudexisOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const whyAudexisRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsMenuOpen(false);
     setIsServicesOpen(false);
     setIsWhyAudexisOpen(false);
   }, [location]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsServicesOpen(false);
+      setIsWhyAudexisOpen(false);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(event.target as Node)) {
+        setIsServicesOpen(false);
+      }
+      if (whyAudexisRef.current && !whyAudexisRef.current.contains(event.target as Node)) {
+        setIsWhyAudexisOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const scrollToContact = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -137,7 +163,7 @@ export function Navbar() {
             >
               About
             </Link>
-            <div className="relative">
+            <div className="relative" ref={servicesRef}>
               <button
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 className="flex items-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
@@ -161,7 +187,7 @@ export function Navbar() {
                 </div>
               )}
             </div>
-            <div className="relative">
+            <div className="relative" ref={whyAudexisRef}>
               <button
                 onClick={() => setIsWhyAudexisOpen(!isWhyAudexisOpen)}
                 className="flex items-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
