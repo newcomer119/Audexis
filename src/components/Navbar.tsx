@@ -7,28 +7,28 @@ import Logo from '../aude1.png'
 import { scrollToTop } from '../components/scrollUtils';
 
 const serviceLinks = [
-  { 
-    name: 'Legal Transcription', 
+  {
+    name: 'Legal Transcription',
     path: '/services/legal',
     caption: 'Court proceedings, depositions, and legal documentation'
   },
-  { 
-    name: 'General Transcription', 
+  {
+    name: 'General Transcription',
     path: '/services/general',
     caption: 'Interviews, meetings, and multimedia content'
   },
-  { 
-    name: 'Medical Transcription', 
+  {
+    name: 'Medical Transcription',
     path: '/services/medical',
     caption: 'Clinical reports, patient records, and medical dictations'
   },
-  { 
-    name: 'Global Translations', 
+  {
+    name: 'Global Translations',
     path: '/services/global',
     caption: 'Multi-language translation and localization services'
   },
-  { 
-    name: 'Subtitle & Captioning', 
+  {
+    name: 'Subtitle & Captioning',
     path: '/services/subtitle',
     caption: 'Video subtitles, closed captions, and multimedia accessibility'
   }
@@ -100,15 +100,29 @@ export function Navbar() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const currentPath = window.location.pathname;
     const [targetPath, hash] = href.split('#');
-    
-    if (currentPath === targetPath || (targetPath === '' && hash)) {
-      scrollToTop(hash);
+
+    if (window.location.pathname === targetPath || !targetPath) {
+      // If already on the target page, scroll to the section
+      if (hash) {
+        const sectionElement = document.getElementById(hash);
+        sectionElement?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        scrollToTop();
+      }
     } else {
-      navigate(targetPath);
+      // Navigate to the target page first
+      navigate(targetPath, { replace: true });
+      if (hash) {
+        // Wait for the navigation to complete, then scroll to the section
+        setTimeout(() => {
+          const sectionElement = document.getElementById(hash);
+          sectionElement?.scrollIntoView({ behavior: 'smooth' });
+        }, 300); // Adjust the timeout as needed
+      }
     }
   };
+
 
   const handleHashNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
     e.preventDefault();
@@ -169,7 +183,7 @@ export function Navbar() {
                 className="flex items-center text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
               >
                 Services
-                <ChevronDown className="ml-1 h-4 w-4" />  
+                <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               {isServicesOpen && (
                 <div className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-md shadow-lg py-1 z-50">
@@ -289,9 +303,9 @@ export function Navbar() {
             <a href="/#contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800">
               Contact
             </a>
-            <Link 
-              to="#contact" 
-              onClick={scrollToContact} 
+            <Link
+              to="#contact"
+              onClick={scrollToContact}
               className="block px-3 py-2 btn-primary text-center"
             >
               Get Started

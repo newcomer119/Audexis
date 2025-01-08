@@ -26,7 +26,7 @@ export function Mission() {
     {
       icon: DollarSign,
       title: 'Cost Saving',
-      description: 'We provide a very competitive pricing starting from $0.90 for English to English transcription and $2.90 for specific European language translations with the free sample facility of large number of minutes for General and Legal transcription services to meet our clients quality requirements before initiating a project.',
+      description: 'We provide a very competitive pricing starting from $0.85 for English to English transcription and $2.90 for specific European language translations with the free sample facility of large number of minutes for General and Legal transcription services to meet our clients quality requirements before initiating a project.',
     },
   ];
 
