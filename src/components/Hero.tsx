@@ -78,7 +78,7 @@ export function Hero() {
   return (
     <>
       <Helmet>
-        <title>Audexis | Home - Professional Transcription Services</title>
+        <title>Audexis | Home - Professional Transcription/Translation & Subtitling Services</title>
         <meta name="description" content="Audexis is a leading transcription service provider offering professional transcription, captioning, and subtitle services. We deliver accurate, reliable, and timely solutions for legal, medical, and business needs." />
         <meta name="keywords" content="Audexis, transcription company, professional transcription, legal transcription, medical transcription, business transcription, subtitling services" />
         

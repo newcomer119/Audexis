@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Headphones, Menu, X, ChevronDown } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ThemeToggle } from './ThemeToggle';
-import AudexisLogo from '../Audexis2.png'
+import AudexisLogo from '/favicon.ico'
 import Logo from '../aude1.png'
 import { scrollToTop } from '../components/scrollUtils';
 
